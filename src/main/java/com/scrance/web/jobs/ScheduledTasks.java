@@ -10,7 +10,7 @@ public class ScheduledTasks {
     @Autowired
     private ScraperFinanceService sraperFinanceService;
 
-    @Scheduled(cron = "0 * * * * *") // Cron expression for running every minute
+    @Scheduled(cron = "59 * * * * *") // Cron expression for running every 59 minute
     public void execute() {
         sraperFinanceService.dummyMethod();
     }

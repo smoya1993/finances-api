@@ -37,7 +37,7 @@ public class ScraperFinanceService {
                 json.put("shortName", stockSymbol);
                 json.put("symbol", stockSymbol);
                 json.put("longName", finStreamer2 != null ? finStreamer.select("h1").first().childNodes().get(0): null);
-                json.put("marketState", "OPEN");
+                json.put("marketState", "As of  02:19PM EST. Market open");
                 json.put("regularMarketTime", "1");
                 json.put("regularMarketPrice", finStreamer2 != null ? finStreamer2.attr("value"): null);
                 json.put("regularMarketDayHigh", "186.19");
@@ -96,6 +96,7 @@ public class ScraperFinanceService {
             sb.append(String.format("%12s", marketState));
             sb.append(String.format(" %-20s\n", longName));
         }
+
         System.out.print(sb);
         //Mail m = new Mail();
         //m.sendMail(sb.toString(), "Nuevas notificaciones en tus Bolsa");
